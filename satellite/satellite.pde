@@ -7,7 +7,7 @@ void setup() {
   img = loadImage("xmaker.png");
   size(800, 600);  // Stage size
   background(255);
-  myPort = new Serial(this, "COM10", 9600);
+  myPort = new Serial(this, "COM1", 9600);
   textSize(64);
   fill(0, 102, 153);
   stroke(0, 0);
@@ -22,7 +22,7 @@ void setup() {
   text("姿态Yaw：", 180, 270);
   text("姿态Roll：", 180, 300);
   text("学生：", 180, 350);
-  text("日期：2018年2月4日", 180, 380);
+  text("日期：2018年3月1日", 180, 380);
   image(img, 550, 500, 43 * 5, 14 * 5);
 
 }
@@ -34,7 +34,7 @@ void draw() {
   if ( myPort.available() > 0)
   { // If data is available,
     val = myPort.readStringUntil('\n');         // read it and store it in val
-    a = Float.parseFloat(val);
+    a = float(val);;
     println(a);
     if ((int(a) / 10000)%10 == 1)
     {
