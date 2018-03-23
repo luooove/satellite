@@ -7,7 +7,7 @@ void setup() {
   img = loadImage("xmaker.png");
   size(800, 600);  // Stage size
   background(255);
-  myPort = new Serial(this, "COM1", 9600);
+  myPort = new Serial(this, "COM3", 9600);
   textSize(64);
   fill(0, 102, 153);
   stroke(0, 0);
@@ -26,15 +26,17 @@ void setup() {
   image(img, 550, 500, 43 * 5, 14 * 5);
 
 }
-String val;
+String val="";
 float a;
 
 void draw() {
 
   if ( myPort.available() > 0)
   { // If data is available,
+    val="";
     val = myPort.readStringUntil('\n');         // read it and store it in val
-    a = float(val);;
+    a = float(val);
+   // a=float(val);
     println(a);
     if ((int(a) / 10000)%10 == 1)
     {
@@ -87,57 +89,63 @@ void draw() {
       fill (255);//changes the fill to the background color
       rect(250, 325, 200, 30);//creates a rectangle fill the above fill
       fill(0, 102, 153);
-      text("柯谐宁", 250, 350);
+      text("张骅闽", 250, 350);
     }
         if ((int(a) / 10000)/10 == 2)//name2
     {
       fill (255);//changes the fill to the background color
       rect(250, 325, 200, 30);//creates a rectangle fill the above fill
       fill(0, 102, 153);
-      text("杨卓朋", 250, 350);
+      text("康宸浩", 250, 350);
     }
      if ((int(a) / 10000)/10 == 3)//name3
     {
       fill (255);//changes the fill to the background color
       rect(250, 325, 200, 30);//creates a rectangle fill the above fill
       fill(0, 102, 153);
-      text("高帷熠", 250, 350);
+      text("王子麟", 250, 350);
     }
      if ((int(a) / 10000)/10 == 4)//name4
     {
       fill (255);//changes the fill to the background color
       rect(250, 325, 200, 30);//creates a rectangle fill the above fill
       fill(0, 102, 153);
-      text("吴羽凡", 250, 350);
+      text("薛开心", 250, 350);
     }
      if ((int(a) / 10000)/10 == 5)//name5
     {
       fill (255);//changes the fill to the background color
       rect(250, 325, 200, 30);//creates a rectangle fill the above fill
       fill(0, 102, 153);
-      text("张智翔", 250, 350);
+      text("陈祺介", 250, 350);
     }
      if ((int(a) / 10000)/10 == 6)//name6
     {
       fill (255);//changes the fill to the background color
       rect(250, 325, 200, 30);//creates a rectangle fill the above fill
       fill(0, 102, 153);
-      text("易泽翔", 250, 350);
+      text("张朱轩", 250, 350);
     }
      if ((int(a) / 10000)/10 == 7)//name7
     {
       fill (255);//changes the fill to the background color
       rect(250, 325, 200, 30);//creates a rectangle fill the above fill
       fill(0, 102, 153);
-      text("张瀚澜", 250, 350);
+      text("刘吴柯轩", 250, 350);
     }
      if ((int(a) / 10000)/10 == 8)//name8
     {
       fill (255);//changes the fill to the background color
       rect(250, 325, 200, 30);//creates a rectangle fill the above fill
       fill(0, 102, 153);
-      text("张子麒", 250, 350);
+      text("张涵铭善", 250, 350);
     }
-    
+      if ((int(a) / 10000)/10 == 9)//name8
+    {
+      fill (255);//changes the fill to the background color
+      rect(250, 325, 200, 30);//creates a rectangle fill the above fill
+      fill(0, 102, 153);
+      text("向子恒", 250, 350);
+    }
   }
 }
